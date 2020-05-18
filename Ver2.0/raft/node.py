@@ -46,7 +46,7 @@ class Node():
         self.vote_ids = {_id: 0 for _id in self.peers}
 
         # time count
-        self.wait_ms = (10, 20)
+        self.wait_ms = (5, 10)
         self.next_leader_election_time = time.time() + random.randint(*self.wait_ms)
         self.next_heartbeat_time = 0
 
@@ -99,6 +99,7 @@ class Node():
         if data['type'] == 'client_append_entries':
             if self.role != 'leader':
                 if self.leader_id:
+                    logging.info('redirect: client_append_entries to leader')
                     self.send(data, self.peers[self.leader_id])
                 return None
             else:
@@ -107,6 +108,7 @@ class Node():
 
         # this node is not the target node
         if data['dst_id'] != self.id:
+            logging.info('redirect: to ' + data['dst_id'])
             # redirect to target node
             self.send(data, self.peers[data['dst_id']])
             return None
