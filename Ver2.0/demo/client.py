@@ -18,8 +18,7 @@ def send():
     while True:
             addr = random.choice(servers)
             
-            data = {'type': 'client_append_entries', 'timestamp': int(time.time()),
-                    'concensus_algorithm': 'raft', 'BlockChain': 'constan-chain'}
+            data = client_data()
             print('send: ', data)
 
             data = json.dumps(data).encode('utf-8')
@@ -38,6 +37,13 @@ def recv():
 
         data = json.loads(data)
         print('recv: ' + str(data['index']) + ' has been committed')
+
+
+# combine it with client app
+def client_data():
+	data = {'type': 'client_append_entries', 'timestamp': int(time.time()),
+                    'concensus_algorithm': 'raft', 'BlockChain': 'constan-chain'}
+    return data
 
 
 if __name__ == '__main__':
