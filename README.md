@@ -1,7 +1,7 @@
 # 2020 SM1 COMP90020 Distributed Algorithms Project
 Basically we have implemented blockchains with three different consensus algorithms: proof of work, proof of state and raft. 
 
-(Thanks the collabaration from [Andy](https://github.com/AndyFromTaiwan) & (Cecilia)[https://github.com/cecilia726276]]
+(Thanks the collabaration from [Andy](https://github.com/AndyFromTaiwan) & (Cecilia)[https://github.com/cecilia726276]
 
 The directory's structure is as follows: 
 
