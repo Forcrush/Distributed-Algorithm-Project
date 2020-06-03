@@ -1,0 +1,28 @@
+
+HOST = "127.0.0.1"
+PORT = 5000
+HOSTPORT = "http://127.0.0.1:5000"
+INIT_PEERS = []
+
+
+# HOST = "127.0.0.1"
+# PORT = 6666
+# HOSTPORT = "http://127.0.0.1:6666"
+# INIT_PEERS = ["127.0.0.1:5000"]
+
+
+# HOST = "127.0.0.1"
+# PORT = 7777
+# HOSTPORT = "http://127.0.0.1:7777"
+# INIT_PEERS = ["127.0.0.1:6666"]
+
+
+# Transaction fee
+TRANSACTION_FEE = 0
+
+TRANSACTION_THRESHOLD = 1
+
+TRANSACTION_TYPE = ["stake", "validator", "transaction"]
+
+CONNECTION_TIMEOUT_IN_SECONDS = 3
+
